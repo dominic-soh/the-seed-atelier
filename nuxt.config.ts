@@ -65,7 +65,7 @@ export default defineNuxtConfig({
     route: '/_studio',
     repository: {
       provider: 'github',
-      owner: process.env.STUDIO_GITHUB_OWNER || 'the-seed-atelier',
+      owner: process.env.STUDIO_GITHUB_OWNER || 'dominic-soh',
       repo: process.env.STUDIO_GITHUB_REPO || 'the-seed-atelier',
       branch: process.env.STUDIO_GITHUB_BRANCH || 'main'
     }
