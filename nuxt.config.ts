@@ -20,7 +20,7 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=Fraunces:SOFT,WONK,opsz,wght@0,0,9..144,100..900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap'
         }
       ]
     }

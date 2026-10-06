@@ -35,8 +35,11 @@
   --ui-border-muted: var(--color-clay-800);
 }
 
-.font-serif {
+.font-serif,
+.atelier-prose h2 {
   font-family: var(--font-serif);
+  font-weight: 520;
+  font-variation-settings: "SOFT" 0, "WONK" 0;
 }
 
 .atelier-prose p + p,
@@ -45,7 +48,6 @@
 }
 
 .atelier-prose h2 {
-  font-family: var(--font-serif);
   font-size: 1.75rem;
   line-height: 1.2;
 }
