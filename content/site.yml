@@ -1,0 +1,21 @@
+name: The Seed Atelier
+tagline: Spatial Curation & Botanical Art
+enquiryEmail: theseedatelier.sg@gmail.com
+confirmationSubject: We received your note
+confirmationBody: Thank you, {firstName}. We have your note about {service} and will reply to this address.
+socials:
+  - label: Linktree
+    href: https://linktr.ee/jacquelinechinpk
+  - label: Instagram
+    href: https://www.instagram.com/jacquelinechinpk
+  - label: TikTok
+    href: https://www.tiktok.com/@jacquelinechinpk
+nav:
+  - label: Services
+    to: /services
+  - label: Work
+    to: /work
+  - label: About
+    to: /about
+  - label: Contact
+    to: /contact

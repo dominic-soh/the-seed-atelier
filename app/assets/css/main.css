@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: "Source Sans 3", sans-serif;
+  --font-serif: "Fraunces", serif;
+
+  --color-clay-50: #fbf7f3;
+  --color-clay-100: #f3e6dc;
+  --color-clay-200: #e6cdba;
+  --color-clay-300: #d4ae96;
+  --color-clay-400: #c49278;
+  --color-clay-500: #b67b60;
+  --color-clay-600: #a0664d;
+  --color-clay-700: #84523f;
+  --color-clay-800: #6c4336;
+  --color-clay-900: #58382f;
+  --color-clay-950: #3c241e;
+}
+
+:root,
+.light {
+  --ui-bg: var(--color-clay-50);
+  --ui-bg-muted: var(--color-clay-100);
+  --ui-bg-elevated: var(--color-clay-100);
+  --ui-border: var(--color-clay-200);
+  --ui-border-muted: var(--color-clay-200);
+}
+
+.dark {
+  --ui-bg: var(--color-clay-950);
+  --ui-bg-muted: var(--color-clay-900);
+  --ui-bg-elevated: var(--color-clay-900);
+  --ui-border: var(--color-clay-800);
+  --ui-border-muted: var(--color-clay-800);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.atelier-prose p + p,
+.atelier-prose h2 {
+  margin-top: 1.25rem;
+}
+
+.atelier-prose h2 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
