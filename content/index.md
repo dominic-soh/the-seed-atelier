@@ -1,9 +1,7 @@
 ---
 title: Design, Curated.
 description: We cultivate visual narratives with understated elegance, fusing strategic insight with artisanal detail so each project resonates long after first glance.
-navOrder: 0
-navigation:
-  title: ""
+navigation: false
 ---
 
 ::page-hero
