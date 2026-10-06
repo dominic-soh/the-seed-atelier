@@ -6,10 +6,17 @@ const { data: pages } = await useAsyncData('site-nav', () =>
 const nav = computed(() => {
   const items = pages.value || []
   return items
-    .filter(item => item.navigation !== false)
+    .filter(shownInNavigation)
     .sort((left, right) => (left.navOrder || 0) - (right.navOrder || 0))
     .map(item => ({ label: navigationLabel(item), to: item.path }))
 })
+
+function shownInNavigation(item: { path: string, navigation?: boolean | object | null }) {
+  if (item.path === '/') {
+    return false
+  }
+  return item.navigation !== false
+}
 
 function navigationLabel(item: { title: string, navigation?: boolean | { title?: string } | null }) {
   if (item.navigation && typeof item.navigation === 'object' && item.navigation.title) {
