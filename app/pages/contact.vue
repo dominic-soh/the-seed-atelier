@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData('contact-page', () =>
-  queryCollection('pages').where('stem', '=', 'pages/contact').first()
+  queryCollection('pages').where('path', '=', '/contact').first()
 )
 
 useSeoMeta({

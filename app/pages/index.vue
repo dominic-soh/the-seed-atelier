@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData('home-page', () =>
-  queryCollection('pages').where('stem', '=', 'pages/home').first()
+  queryCollection('pages').where('path', '=', '/').first()
 )
 const { data: services } = await useAsyncData('home-services', () =>
   queryCollection('services').order('order', 'ASC').limit(2).all()

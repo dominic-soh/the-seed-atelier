@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData('about-page', () =>
-  queryCollection('pages').where('stem', '=', 'pages/about').first()
+  queryCollection('pages').where('path', '=', '/about').first()
 )
 
 if (!page.value) {

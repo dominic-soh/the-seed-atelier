@@ -9,8 +9,12 @@ const { data: settings } = await useSiteSettings()
         to="/"
         class="leading-tight"
       >
-        <span class="font-serif text-xl text-highlighted">{{ settings?.name || 'The Seed Atelier' }}</span>
-        <span class="mt-1 block text-sm text-muted">{{ settings?.tagline }}</span>
+        <img
+          src="/images/logo.png"
+          alt="The Seed Atelier"
+          class="h-16 w-auto rounded-md md:h-20"
+        >
+        <span class="mt-2 block text-sm text-muted">{{ settings?.tagline }}</span>
       </NuxtLink>
       <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
         <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
