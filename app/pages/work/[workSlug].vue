@@ -54,19 +54,6 @@ useSeoMeta({
       </div>
     </div>
 
-    <div class="grid gap-10 md:grid-cols-[2fr_1fr]">
-      <div class="text-lg text-default">
-        <ContentRenderer :value="project" />
-      </div>
-      <ul class="flex flex-col gap-3">
-        <li
-          v-for="area in project.focusAreas"
-          :key="area"
-          class="border-t border-default pt-3"
-        >
-          {{ area }}
-        </li>
-      </ul>
-    </div>
+    <ContentRenderer :value="project" />
   </article>
 </template>

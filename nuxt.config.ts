@@ -7,6 +7,18 @@ export default defineNuxtConfig({
     'nuxt-studio'
   ],
 
+  components: [
+    {
+      path: '~/components/content',
+      pathPrefix: false,
+      global: true
+    },
+    {
+      path: '~/components',
+      pathPrefix: false
+    }
+  ],
+
   devtools: {
     enabled: true
   },

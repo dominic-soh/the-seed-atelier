@@ -32,17 +32,7 @@ export default defineContentConfig({
         { include: '*.md' },
         { include: 'services/index.md' },
         { include: 'work/index.md' }
-      ],
-      schema: z.object({
-        description: z.string(),
-        kicker: z.string().optional(),
-        image: photograph(),
-        imageAlt: z.string().optional(),
-        gallery: z.array(z.object({
-          src: z.string(),
-          alt: z.string()
-        })).optional()
-      })
+      ]
     }),
     services: defineCollection({
       type: 'page',
@@ -71,7 +61,6 @@ export default defineContentConfig({
         slug: z.string(),
         category: z.string(),
         role: z.string(),
-        focusAreas: z.array(z.string()),
         aesthetic: z.string().optional(),
         image: photograph(),
         imageAlt: z.string().optional(),
