@@ -1,9 +1,9 @@
 ---
 title: Art, Stories, Cultivated
 description: Art, nature, and light are the anchors of my work.
-kicker: Warm Maximalism
 image: /images/S__31653895_0.jpg
 imageAlt: Interior photographed for The Seed Atelier
+kicker: Warm Maximalism
 ---
 
 My creative path began with exploring the fluid interplay of light, hue, and emotional resonance through watercolor painting at NAFA (Nanyang Academy of Fine Arts). Driven by a lifelong reverence for botanical forms, I later spent a transformative year in Tokyo alongside my aging dog, immersing myself in the intentional discipline of traditional Ikebana mastery.

@@ -16,9 +16,12 @@ useSeoMeta({
         <h1 class="font-serif text-5xl leading-tight text-highlighted">
           {{ page?.title }}
         </h1>
-        <p class="mt-4 max-w-md text-lg text-toned">
-          {{ page?.description }}
-        </p>
+        <div class="mt-4 max-w-md text-lg text-toned">
+          <ContentRenderer
+            v-if="page"
+            :value="page"
+          />
+        </div>
       </div>
       <img
         v-if="page?.image"

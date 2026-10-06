@@ -25,7 +25,7 @@ useSeoMeta({
       <p class="mt-4 text-xl italic text-toned">
         {{ page.description }}
       </p>
-      <div class="atelier-prose mt-8 text-default">
+      <div class="mt-8 text-default">
         <ContentRenderer :value="page" />
       </div>
     </div>

@@ -45,15 +45,9 @@ useSeoMeta({
         >
           {{ service.priceLabel }}
         </p>
-        <ul class="mt-6 flex flex-col gap-3">
-          <li
-            v-for="bullet in service.bullets"
-            :key="bullet.title"
-          >
-            <span class="font-semibold text-highlighted">{{ bullet.title }}.</span>
-            {{ bullet.text }}
-          </li>
-        </ul>
+        <div class="mt-6 text-default">
+          <ContentRenderer :value="service" />
+        </div>
       </div>
     </div>
 

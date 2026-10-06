@@ -19,3 +19,5 @@ gallery:
 image: /images/S__31653894_0.jpg
 imageAlt: A reading nook with a gallery wall, houseplants, and a small white dog
 ---
+
+We cultivate visual narratives with understated elegance, fusing strategic insight with artisanal detail so each project resonates long after first glance.

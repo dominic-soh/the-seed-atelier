@@ -2,10 +2,16 @@
 const { data: page } = await useAsyncData('home-page', () =>
   queryCollection('pages').where('path', '=', '/').first()
 )
+const { data: servicesPage } = await useAsyncData('home-services-page', () =>
+  queryCollection('pages').where('path', '=', '/services').first()
+)
 const { data: services } = await useAsyncData('home-services', () =>
   queryCollection('services').order('order', 'ASC').limit(2).all()
 )
-const { data: work } = await useAsyncData('home-work', () =>
+const { data: workPage } = await useAsyncData('home-work-page', () =>
+  queryCollection('pages').where('path', '=', '/work').first()
+)
+const { data: projects } = await useAsyncData('home-work', () =>
   queryCollection('work').order('order', 'ASC').limit(2).all()
 )
 
@@ -22,9 +28,12 @@ useSeoMeta({
         <h1 class="font-serif text-5xl leading-tight text-highlighted md:text-6xl">
           {{ page?.title }}
         </h1>
-        <p class="mt-6 max-w-xl text-lg text-toned">
-          {{ page?.description }}
-        </p>
+        <div class="mt-6 max-w-xl text-lg text-toned">
+          <ContentRenderer
+            v-if="page"
+            :value="page"
+          />
+        </div>
       </div>
       <img
         v-if="page?.image"
@@ -36,7 +45,7 @@ useSeoMeta({
 
     <section>
       <h2 class="font-serif text-4xl text-highlighted">
-        Our Services
+        {{ servicesPage?.title }}
       </h2>
       <div class="mt-8 grid gap-6 md:grid-cols-2">
         <article
@@ -65,7 +74,7 @@ useSeoMeta({
     <section>
       <div class="flex items-end justify-between gap-4">
         <h2 class="font-serif text-4xl text-highlighted">
-          Selected work
+          {{ workPage?.title }}
         </h2>
         <UButton
           to="/work"
@@ -77,7 +86,7 @@ useSeoMeta({
       </div>
       <div class="mt-8 grid gap-6 md:grid-cols-2">
         <article
-          v-for="project in work"
+          v-for="project in projects"
           :key="project.slug"
           class="rounded-lg border border-default p-6"
         >

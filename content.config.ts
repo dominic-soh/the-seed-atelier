@@ -28,7 +28,11 @@ export default defineContentConfig({
     }),
     pages: defineCollection({
       type: 'page',
-      source: '*.md',
+      source: [
+        { include: '*.md' },
+        { include: 'services/index.md' },
+        { include: 'work/index.md' }
+      ],
       schema: z.object({
         description: z.string(),
         kicker: z.string().optional(),
@@ -42,14 +46,13 @@ export default defineContentConfig({
     }),
     services: defineCollection({
       type: 'page',
-      source: 'services/*.md',
+      source: {
+        include: 'services/*.md',
+        exclude: ['services/index.md']
+      },
       schema: z.object({
         summary: z.string(),
         slug: z.string(),
-        bullets: z.array(z.object({
-          title: z.string(),
-          text: z.string()
-        })),
         image: photograph(),
         imageAlt: z.string().optional(),
         priceLabel: z.string().optional(),
@@ -59,7 +62,10 @@ export default defineContentConfig({
     }),
     work: defineCollection({
       type: 'page',
-      source: 'work/*.md',
+      source: {
+        include: 'work/*.md',
+        exclude: ['work/index.md']
+      },
       schema: z.object({
         client: z.string(),
         slug: z.string(),

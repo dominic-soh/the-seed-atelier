@@ -55,7 +55,7 @@ useSeoMeta({
     </div>
 
     <div class="grid gap-10 md:grid-cols-[2fr_1fr]">
-      <div class="atelier-prose text-lg text-default">
+      <div class="text-lg text-default">
         <ContentRenderer :value="project" />
       </div>
       <ul class="flex flex-col gap-3">

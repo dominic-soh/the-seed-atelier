@@ -1,19 +1,34 @@
 <script setup lang="ts">
+const { data: page } = await useAsyncData('services-page', () =>
+  queryCollection('pages').where('path', '=', '/services').first()
+)
 const { data: services } = await useAsyncData('services', () =>
   queryCollection('services').order('order', 'ASC').all()
 )
 
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Services page is missing' })
+}
+
 useSeoMeta({
-  title: 'Services',
-  description: 'Spatial curation, botanical art, workshops, and on-site styling from The Seed Atelier.'
+  title: page.value.title,
+  description: page.value.description
 })
 </script>
 
 <template>
   <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12">
-    <h1 class="font-serif text-5xl text-highlighted">
-      Our Services
-    </h1>
+    <div>
+      <h1 class="font-serif text-5xl text-highlighted">
+        {{ page?.title }}
+      </h1>
+      <div class="mt-4 max-w-2xl text-lg text-toned">
+        <ContentRenderer
+          v-if="page"
+          :value="page"
+        />
+      </div>
+    </div>
     <article
       v-for="service in services"
       :key="service.slug"

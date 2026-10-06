@@ -52,6 +52,14 @@ export default defineNuxtConfig({
     }
   },
 
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        module: 'ESNext'
+      }
+    }
+  },
+
   eslint: {
     config: {
       stylistic: {
