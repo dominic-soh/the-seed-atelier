@@ -1,9 +1,9 @@
 ---
 title: On-Site Spatial Styling
+asksForGuests: false
+order: 5
 slug: on-site-styling
 summary: Bringing completed spaces to life through intuitive details.
-order: 5
-asksForGuests: false
 ---
 
 - **Spatial Styling.** Hands-on placement of art, furniture, and decor objects
