@@ -1,6 +1,9 @@
 ---
 title: Art, Stories, Cultivated
 description: Art, nature, and light are the anchors of my work.
+navOrder: 3
+navigation:
+  title: About
 ---
 
 ::page-hero

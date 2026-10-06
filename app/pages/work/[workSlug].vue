@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const slug = readRouteParam(useRoute().params.workSlug)
 const { data: project } = await useAsyncData(`work-${slug}`, () =>
-  queryCollection('work').where('slug', '=', slug).first()
+  queryCollection('work').path(`/work/${slug}`).first()
 )
 
 if (!project.value) {

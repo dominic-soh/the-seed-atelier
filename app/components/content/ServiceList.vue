@@ -45,7 +45,7 @@ const { data: services } = await useAsyncData(
           {{ service.summary }}
         </p>
         <UButton
-          :to="`/services/${service.slug}`"
+          :to="service.path"
           variant="link"
           class="mt-4 px-0"
           trailing-icon="i-lucide-arrow-right"
@@ -88,7 +88,7 @@ const { data: services } = await useAsyncData(
           </p>
         </div>
         <UButton
-          :to="`/services/${service.slug}`"
+          :to="service.path"
           variant="link"
           class="px-0"
         >

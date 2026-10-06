@@ -56,11 +56,15 @@ async function findService(event: H3Event, slug: string | undefined) {
   if (!slug) {
     return null
   }
-  const service = await queryCollection(event, 'services').where('slug', '=', slug).first()
-  if (!service) {
+  const bySlug = await queryCollection(event, 'services').where('slug', '=', slug).first()
+  if (bySlug) {
+    return bySlug
+  }
+  const byPath = await queryCollection(event, 'services').path(`/services/${slug}`).first()
+  if (!byPath) {
     throw createError({ statusCode: 400, statusMessage: 'That service is not available' })
   }
-  return service
+  return byPath
 }
 
 function guestsForService(

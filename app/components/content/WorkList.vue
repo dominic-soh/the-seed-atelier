@@ -60,7 +60,7 @@ const { data: projects } = await useAsyncData(
           {{ project.title }}
         </p>
         <UButton
-          :to="`/work/${project.slug}`"
+          :to="project.path"
           variant="link"
           class="mt-4 px-0"
           trailing-icon="i-lucide-arrow-right"
@@ -94,7 +94,7 @@ const { data: projects } = await useAsyncData(
             {{ project.role }}
           </p>
           <UButton
-            :to="`/work/${project.slug}`"
+            :to="project.path"
             variant="link"
             class="mt-4 px-0"
           >

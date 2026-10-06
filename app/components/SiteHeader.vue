@@ -1,5 +1,22 @@
 <script setup lang="ts">
 const { data: settings } = await useSiteSettings()
+const { data: pages } = await useAsyncData('site-nav', () =>
+  queryCollection('pages').select('path', 'title', 'navigation', 'navOrder').all()
+)
+const nav = computed(() => {
+  const items = pages.value || []
+  return items
+    .filter(item => item.navigation !== false)
+    .sort((left, right) => (left.navOrder || 0) - (right.navOrder || 0))
+    .map(item => ({ label: navigationLabel(item), to: item.path }))
+})
+
+function navigationLabel(item: { title: string, navigation?: boolean | { title?: string } | null }) {
+  if (item.navigation && typeof item.navigation === 'object' && item.navigation.title) {
+    return item.navigation.title
+  }
+  return item.title
+}
 </script>
 
 <template>
@@ -19,7 +36,7 @@ const { data: settings } = await useSiteSettings()
       <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
         <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
           <NuxtLink
-            v-for="item in settings?.nav || []"
+            v-for="item in nav"
             :key="item.to"
             :to="item.to"
             class="text-toned hover:text-primary"

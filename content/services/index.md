@@ -1,6 +1,9 @@
 ---
 title: Our Services
 description: Spatial curation, botanical art, workshops, and on-site styling from The Seed Atelier.
+navOrder: 1
+navigation:
+  title: Services
 ---
 
 ::page-hero{heading="Our Services"}

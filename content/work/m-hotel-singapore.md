@@ -1,10 +1,10 @@
 ---
 title: Wedding Banquet Floral Curation
-client: M Hotel Singapore
-slug: m-hotel-singapore
 category: Hospitality & Event Spatial Curation
-role: Preserved Floral Design & Spatial Styling
+client: M Hotel Singapore
 order: 1
+role: Preserved Floral Design & Spatial Styling
+slug: m-hotel-singapore
 ---
 
 ::project-story

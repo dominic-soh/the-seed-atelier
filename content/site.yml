@@ -10,12 +10,3 @@ socials:
     href: https://www.instagram.com/jacquelinechinpk
   - label: TikTok
     href: https://www.tiktok.com/@jacquelinechinpk
-nav:
-  - label: Services
-    to: /services
-  - label: Work
-    to: /work
-  - label: About
-    to: /about
-  - label: Contact
-    to: /contact

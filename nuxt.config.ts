@@ -1,3 +1,6 @@
+import { fileURLToPath } from 'node:url'
+import { collectContentRoutes } from './server/utils/contentRoutes'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -59,8 +62,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      crawlLinks: true,
-      routes: ['/', '/services', '/work', '/about', '/contact']
+      crawlLinks: true
     }
   },
 
@@ -68,6 +70,15 @@ export default defineNuxtConfig({
     tsConfig: {
       compilerOptions: {
         module: 'ESNext'
+      }
+    }
+  },
+
+  hooks: {
+    'prerender:routes'(ctx) {
+      const contentDir = fileURLToPath(new URL('./content', import.meta.url))
+      for (const route of collectContentRoutes(contentDir)) {
+        ctx.routes.add(route)
       }
     }
   },

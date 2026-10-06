@@ -5,6 +5,28 @@ function photograph() {
   return property(z.string()).editor({ input: 'media', label: 'Photograph' }).optional()
 }
 
+function navigation() {
+  return z.union([
+    z.boolean(),
+    z.object({
+      title: property(z.string()).editor({ label: 'Navigation title' }).optional(),
+      description: property(z.string()).editor({ hidden: true }).optional(),
+      icon: property(z.string()).editor({ hidden: true }).optional()
+    })
+  ]).optional()
+}
+
+function hiddenNavigation() {
+  return property(navigation()).editor({ hidden: true })
+}
+
+function hiddenSeo() {
+  return property(z.object({
+    title: z.string().optional(),
+    description: z.string().optional()
+  })).editor({ hidden: true }).optional()
+}
+
 export default defineContentConfig({
   collections: {
     settings: defineCollection({
@@ -19,20 +41,24 @@ export default defineContentConfig({
         socials: z.array(z.object({
           label: z.string(),
           href: z.string()
-        })),
-        nav: z.array(z.object({
-          label: z.string(),
-          to: z.string()
         }))
       })
     }),
     pages: defineCollection({
       type: 'page',
       source: [
-        { include: '*.md' },
+        {
+          include: '**/*.md',
+          exclude: ['services/*.md', 'work/*.md']
+        },
         { include: 'services/index.md' },
         { include: 'work/index.md' }
-      ]
+      ],
+      schema: z.object({
+        navigation: navigation(),
+        navOrder: property(z.number()).editor({ label: 'Navigation order' }).optional(),
+        seo: hiddenSeo()
+      })
     }),
     services: defineCollection({
       type: 'page',
@@ -47,7 +73,9 @@ export default defineContentConfig({
         imageAlt: z.string().optional(),
         priceLabel: z.string().optional(),
         asksForGuests: z.boolean().default(false),
-        order: z.number().default(0)
+        order: z.number().default(0),
+        navigation: hiddenNavigation(),
+        seo: hiddenSeo()
       })
     }),
     work: defineCollection({
@@ -64,7 +92,9 @@ export default defineContentConfig({
         aesthetic: z.string().optional(),
         image: photograph(),
         imageAlt: z.string().optional(),
-        order: z.number().default(0)
+        order: z.number().default(0),
+        navigation: hiddenNavigation(),
+        seo: hiddenSeo()
       })
     })
   }
