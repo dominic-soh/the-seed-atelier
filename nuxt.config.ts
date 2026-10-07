@@ -54,6 +54,13 @@ export default defineNuxtConfig({
           'remark-mdc': { options: { autoUnwrap: true } }
         }
       }
+    },
+
+    // Pinned, not sniffed: Content picks its connector from the runtime running
+    // the build, so leaving it unset makes a Node build emit better-sqlite3 and a
+    // Bun build emit bun:sqlite. Pair it with the function runtime below.
+    experimental: {
+      sqliteConnector: 'bun'
     }
   },
 
@@ -78,6 +85,13 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       failOnError: true
+    },
+
+    // Nitro otherwise infers this from the build runtime too.
+    vercel: {
+      functions: {
+        runtime: 'bun1.x'
+      }
     }
   },
 

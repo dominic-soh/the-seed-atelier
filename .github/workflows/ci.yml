@@ -24,8 +24,9 @@ jobs:
       - name: Typecheck
         run: bun run typecheck
 
+      # --bun matches vercel.json's buildCommand, so CI builds what deploys.
       - name: Build
-        run: bun run build
+        run: bun run --bun build
 
       # Needs the build above: the Studio round-trip test compares against the
       # content database, which only has rows after a build.
