@@ -5,10 +5,13 @@ import { describe, expect, it } from 'vitest'
 // the document built into the content database. nuxt-studio hardcodes remark-mdc
 // `autoUnwrap: true`, so nuxt.config has to set the same option for the build or
 // every ::block with body text reports a phantom change. Needs a build first.
+// `nuxt prepare` creates this file empty, so presence alone means nothing.
 const dumpPath = '.nuxt/content/sql_dump.txt'
+const dump = existsSync(dumpPath)
+  ? readFileSync(dumpPath, 'utf8').split('\n').filter(line => line.startsWith('INSERT INTO'))
+  : []
 
-describe.skipIf(!existsSync(dumpPath))('studio round-trip', () => {
-  const dump = readFileSync(dumpPath, 'utf8').split('\n')
+describe.skipIf(dump.length === 0)('studio round-trip', () => {
   const files = readdirSync('content', { recursive: true })
     .filter((file): file is string => typeof file === 'string' && file.endsWith('.md'))
 

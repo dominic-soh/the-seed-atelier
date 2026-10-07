@@ -24,5 +24,10 @@ jobs:
       - name: Typecheck
         run: bun run typecheck
 
+      - name: Build
+        run: bun run build
+
+      # Needs the build above: the Studio round-trip test compares against the
+      # content database, which only has rows after a build.
       - name: Test
         run: bun run test run
