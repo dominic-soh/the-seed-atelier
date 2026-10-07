@@ -5,10 +5,6 @@ function blankText() {
   return z.string().default('')
 }
 
-function photograph() {
-  return property(blankText()).editor({ input: 'media', label: 'Photograph' })
-}
-
 function navigation() {
   return z.union([
     z.boolean(),
@@ -18,10 +14,6 @@ function navigation() {
       icon: property(z.string()).editor({ hidden: true }).optional()
     })
   ]).optional()
-}
-
-function hiddenNavigation() {
-  return property(navigation()).editor({ hidden: true })
 }
 
 function hiddenSeo() {
@@ -73,12 +65,12 @@ export default defineContentConfig({
       schema: z.object({
         summary: z.string(),
         slug: z.string(),
-        image: photograph(),
+        image: property(blankText()).editor({ input: 'media', label: 'Photograph' }),
         imageAlt: blankText(),
         priceLabel: blankText(),
         asksForGuests: z.boolean().default(false),
         order: z.number().default(0),
-        navigation: hiddenNavigation(),
+        navigation: property(navigation()).editor({ hidden: true }),
         seo: hiddenSeo()
       })
     }),
@@ -94,10 +86,10 @@ export default defineContentConfig({
         category: z.string(),
         role: z.string(),
         aesthetic: blankText(),
-        image: photograph(),
+        image: property(blankText()).editor({ input: 'media', label: 'Photograph' }),
         imageAlt: blankText(),
         order: z.number().default(0),
-        navigation: hiddenNavigation(),
+        navigation: property(navigation()).editor({ hidden: true }),
         seo: hiddenSeo()
       })
     })

@@ -1,9 +1,7 @@
 <script setup lang="ts">
-const slug = readRouteParam(useRoute().params.workSlug)
+const slug = String(useRoute().params.workSlug)
 const { data: project } = await useAsyncData(`work-${slug}`, () =>
-  queryCollection('work').path(`/work/${slug}`).first(),
-{ getCachedData: contentCachedData }
-)
+  queryCollection('work').path(`/work/${slug}`).first())
 
 if (!project.value) {
   throw createError({ statusCode: 404, statusMessage: 'Project not found' })

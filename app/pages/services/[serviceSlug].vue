@@ -1,9 +1,7 @@
 <script setup lang="ts">
-const slug = readRouteParam(useRoute().params.serviceSlug)
+const slug = String(useRoute().params.serviceSlug)
 const { data: service } = await useAsyncData(`service-${slug}`, () =>
-  queryCollection('services').path(`/services/${slug}`).first(),
-{ getCachedData: contentCachedData }
-)
+  queryCollection('services').path(`/services/${slug}`).first())
 
 if (!service.value) {
   throw createError({ statusCode: 404, statusMessage: 'Service not found' })

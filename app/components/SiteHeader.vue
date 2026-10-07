@@ -1,9 +1,7 @@
 <script setup lang="ts">
 const { data: settings } = await useSiteSettings()
 const { data: pages } = await useAsyncData('site-nav', () =>
-  queryCollection('pages').select('path', 'title', 'navigation', 'navOrder').all(),
-{ getCachedData: contentCachedData }
-)
+  queryCollection('pages').select('path', 'title', 'navigation', 'navOrder').all())
 const nav = computed(() => {
   const items = pages.value || []
   return items

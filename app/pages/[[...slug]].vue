@@ -2,9 +2,7 @@
 const slug = useRoute().params.slug
 const path = pagePath(slug)
 const { data: page } = await useAsyncData(`page-${path}`, () =>
-  queryCollection('pages').path(path).first(),
-{ getCachedData: contentCachedData }
-)
+  queryCollection('pages').path(path).first())
 
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found' })

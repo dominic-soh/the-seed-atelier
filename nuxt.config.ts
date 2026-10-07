@@ -51,28 +51,19 @@ export default defineNuxtConfig({
     }
   },
 
-  // Public HTML is prerendered by the hook below. A catch-all prerender rule also
-  // makes the browser reuse those build-time payloads, which hides Studio drafts.
+  // Public HTML is prerendered by the hook below. Never add a catch-all prerender
+  // rule: it makes the browser reuse build-time payloads, which hides Studio drafts.
   routeRules: {
-    '/_studio': { prerender: false, ssr: true, headers: { 'X-Robots-Tag': 'noindex' } },
-    '/__nuxt_studio/**': { prerender: false, ssr: true, headers: { 'X-Robots-Tag': 'noindex' } },
-    '/api/**': { prerender: false, headers: { 'X-Robots-Tag': 'noindex' } }
+    '/_studio': { headers: { 'X-Robots-Tag': 'noindex' } },
+    '/__nuxt_studio/**': { headers: { 'X-Robots-Tag': 'noindex' } },
+    '/api/**': { headers: { 'X-Robots-Tag': 'noindex' } }
   },
 
   compatibilityDate: '2025-01-15',
 
   nitro: {
     prerender: {
-      crawlLinks: true,
       failOnError: true
-    }
-  },
-
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        module: 'ESNext'
-      }
     }
   },
 
@@ -100,9 +91,9 @@ export default defineNuxtConfig({
     route: '/_studio',
     repository: {
       provider: 'github',
-      owner: process.env.STUDIO_GITHUB_OWNER || 'dominic-soh',
-      repo: process.env.STUDIO_GITHUB_REPO || 'the-seed-atelier',
-      branch: process.env.STUDIO_GITHUB_BRANCH || 'main'
+      owner: 'dominic-soh',
+      repo: 'the-seed-atelier',
+      branch: 'main'
     }
   }
 })
