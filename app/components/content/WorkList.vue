@@ -48,6 +48,7 @@ const { data: projects } = await useAsyncData(
       <article
         v-for="project in projects"
         :key="project.slug"
+        :data-content-id="project.id"
         class="rounded-lg border border-default p-6"
       >
         <p class="text-sm tracking-wide text-muted uppercase">
@@ -76,6 +77,7 @@ const { data: projects } = await useAsyncData(
       <article
         v-for="project in projects"
         :key="project.slug"
+        :data-content-id="project.id"
         class="grid gap-4 border-b border-default py-8 md:grid-cols-[1fr_2fr]"
       >
         <div>

@@ -36,6 +36,7 @@ const { data: services } = await useAsyncData(
       <article
         v-for="service in services"
         :key="service.slug"
+        :data-content-id="service.id"
         class="rounded-lg border border-default p-6"
       >
         <h3 class="font-serif text-2xl text-highlighted">
@@ -61,6 +62,7 @@ const { data: services } = await useAsyncData(
       <article
         v-for="service in services"
         :key="service.slug"
+        :data-content-id="service.id"
         class="grid items-center gap-6 border-b border-default py-6 md:grid-cols-[8rem_1fr_auto]"
       >
         <img
