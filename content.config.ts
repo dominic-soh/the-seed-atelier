@@ -1,8 +1,12 @@
 import { defineCollection, defineContentConfig, property } from '@nuxt/content'
 import { z } from 'zod'
 
+function blankText() {
+  return z.string().default('')
+}
+
 function photograph() {
-  return property(z.string()).editor({ input: 'media', label: 'Photograph' }).optional()
+  return property(blankText()).editor({ input: 'media', label: 'Photograph' })
 }
 
 function navigation() {
@@ -70,8 +74,8 @@ export default defineContentConfig({
         summary: z.string(),
         slug: z.string(),
         image: photograph(),
-        imageAlt: z.string().optional(),
-        priceLabel: z.string().optional(),
+        imageAlt: blankText(),
+        priceLabel: blankText(),
         asksForGuests: z.boolean().default(false),
         order: z.number().default(0),
         navigation: hiddenNavigation(),
@@ -89,9 +93,9 @@ export default defineContentConfig({
         slug: z.string(),
         category: z.string(),
         role: z.string(),
-        aesthetic: z.string().optional(),
+        aesthetic: blankText(),
         image: photograph(),
-        imageAlt: z.string().optional(),
+        imageAlt: blankText(),
         order: z.number().default(0),
         navigation: hiddenNavigation(),
         seo: hiddenSeo()
