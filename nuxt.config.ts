@@ -43,6 +43,20 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  // Studio's editor parses markdown with remark-mdc autoUnwrap on (hardcoded in
+  // nuxt-studio's generateDocumentFromMarkdownContent). Match it here, or every
+  // ::block with body text round-trips to a different tree and Studio reports the
+  // file as changed the moment you open the page.
+  content: {
+    build: {
+      markdown: {
+        remarkPlugins: {
+          'remark-mdc': { options: { autoUnwrap: true } }
+        }
+      }
+    }
+  },
+
   runtimeConfig: {
     gmailUser: '',
     gmailAppPassword: '',

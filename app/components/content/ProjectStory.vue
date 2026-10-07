@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <section class="grid gap-10 md:grid-cols-[2fr_1fr]">
-    <div class="text-lg text-default">
+    <div class="text-lg text-pretty text-default">
       <slot />
     </div>
     <ul

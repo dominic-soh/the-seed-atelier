@@ -19,7 +19,7 @@ defineProps<{
       <h1 class="font-serif text-5xl leading-tight text-highlighted md:text-6xl">
         {{ heading }}
       </h1>
-      <div class="mt-6 max-w-xl text-lg text-toned">
+      <div class="mt-6 max-w-xl text-lg text-pretty text-toned">
         <slot />
       </div>
     </div>
