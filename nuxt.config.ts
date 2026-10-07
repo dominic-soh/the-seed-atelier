@@ -52,9 +52,9 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/_studio': { prerender: false, ssr: true },
-    '/__nuxt_studio/**': { prerender: false, ssr: true },
-    '/api/**': { prerender: false },
+    '/_studio': { prerender: false, ssr: true, headers: { 'X-Robots-Tag': 'noindex' } },
+    '/__nuxt_studio/**': { prerender: false, ssr: true, headers: { 'X-Robots-Tag': 'noindex' } },
+    '/api/**': { prerender: false, headers: { 'X-Robots-Tag': 'noindex' } },
     '/**': { prerender: true }
   },
 
@@ -62,7 +62,8 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      crawlLinks: true
+      crawlLinks: true,
+      failOnError: true
     }
   },
 
@@ -80,6 +81,8 @@ export default defineNuxtConfig({
       for (const route of collectContentRoutes(contentDir)) {
         ctx.routes.add(route)
       }
+      ctx.routes.add('/robots.txt')
+      ctx.routes.add('/sitemap.xml')
     }
   },
 
