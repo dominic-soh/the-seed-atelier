@@ -19,7 +19,8 @@ const { data: projects } = await useAsyncData(
     }
 
     return query.all()
-  }
+  },
+  { getCachedData: contentCachedData }
 )
 </script>
 

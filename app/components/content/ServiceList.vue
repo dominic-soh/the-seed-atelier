@@ -17,7 +17,8 @@ const { data: services } = await useAsyncData(
     }
 
     return query.all()
-  }
+  },
+  { getCachedData: contentCachedData }
 )
 </script>
 

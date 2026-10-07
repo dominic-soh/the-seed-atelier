@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const slug = readRouteParam(useRoute().params.workSlug)
 const { data: project } = await useAsyncData(`work-${slug}`, () =>
-  queryCollection('work').path(`/work/${slug}`).first()
+  queryCollection('work').path(`/work/${slug}`).first(),
+{ getCachedData: contentCachedData }
 )
 
 if (!project.value) {

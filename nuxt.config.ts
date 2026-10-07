@@ -51,11 +51,12 @@ export default defineNuxtConfig({
     }
   },
 
+  // Public HTML is prerendered by the hook below. A catch-all prerender rule also
+  // makes the browser reuse those build-time payloads, which hides Studio drafts.
   routeRules: {
     '/_studio': { prerender: false, ssr: true, headers: { 'X-Robots-Tag': 'noindex' } },
     '/__nuxt_studio/**': { prerender: false, ssr: true, headers: { 'X-Robots-Tag': 'noindex' } },
-    '/api/**': { prerender: false, headers: { 'X-Robots-Tag': 'noindex' } },
-    '/**': { prerender: true }
+    '/api/**': { prerender: false, headers: { 'X-Robots-Tag': 'noindex' } }
   },
 
   compatibilityDate: '2025-01-15',

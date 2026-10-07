@@ -2,7 +2,8 @@
 const slug = useRoute().params.slug
 const path = pagePath(slug)
 const { data: page } = await useAsyncData(`page-${path}`, () =>
-  queryCollection('pages').path(path).first()
+  queryCollection('pages').path(path).first(),
+{ getCachedData: contentCachedData }
 )
 
 if (!page.value) {

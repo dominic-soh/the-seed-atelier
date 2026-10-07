@@ -25,3 +25,7 @@ logs
 
 # Vercel local link
 .vercel
+
+# Local tooling
+.cursor
+.serena
