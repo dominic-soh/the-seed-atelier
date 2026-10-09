@@ -1,8 +1,18 @@
 name: The Seed Atelier
 tagline: Spatial Curation & Botanical Art
 enquiryEmail: theseedatelier.sg@gmail.com
-confirmationSubject: We received your note
-confirmationBody: Thank you, {firstName}. We have your note about {service} and will reply to this address.
+confirmationSubject: Thanks for getting in touch
+confirmationBody: |-
+  Hi {firstName},
+
+  Thanks for getting in touch about {service}. Your message has reached me, and I'll write back to this address within a couple of days.
+
+  If anything else comes to mind before then, like dates or a photo of the space, just reply to this email. It comes straight to me.
+
+  Speak soon,
+  Jacqueline
+  The Seed Atelier
+  instagram.com/jacquelinechinpk
 socials:
   - label: Linktree
     href: https://linktr.ee/jacquelinechinpk

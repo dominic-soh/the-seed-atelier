@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer'
 
 export interface OutboundMail {
+  fromName?: string
   to: string
   replyTo?: string
   subject: string
@@ -22,7 +23,7 @@ export async function sendGmail(message: OutboundMail) {
 
   try {
     await transport.sendMail({
-      from: config.gmailUser,
+      from: { name: message.fromName ?? '', address: config.gmailUser },
       to: message.to,
       replyTo: message.replyTo,
       subject: message.subject,

@@ -18,6 +18,7 @@ export default defineEventHandler(async (event) => {
   const serviceTitle = service?.title
 
   await sendGmail({
+    fromName: settings.name,
     to: settings.enquiryEmail,
     replyTo: body.email,
     subject: leadSubject(serviceTitle),
@@ -33,6 +34,7 @@ export default defineEventHandler(async (event) => {
   })
 
   const confirmationSent = await trySendGmail({
+    fromName: settings.name,
     to: body.email,
     subject: settings.confirmationSubject,
     text: renderConfirmation(settings.confirmationBody, {
@@ -43,6 +45,7 @@ export default defineEventHandler(async (event) => {
 
   if (!confirmationSent) {
     await trySendGmail({
+      fromName: settings.name,
       to: settings.enquiryEmail,
       subject: 'Confirmation was not delivered',
       text: `The request from ${body.email} is in the previous email. The confirmation to them did not send.`
