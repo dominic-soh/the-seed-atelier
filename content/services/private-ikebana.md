@@ -1,6 +1,8 @@
 ---
 title: Private Ikebana & Floral Workshop
 asksForGuests: true
+image: /images/S__31653895_0.jpg
+imageAlt: ""
 order: 3
 priceLabel: From SGD 180
 slug: private-ikebana
