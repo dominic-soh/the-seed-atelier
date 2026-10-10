@@ -78,8 +78,18 @@ const { data: projects } = await useAsyncData(
         v-for="project in projects"
         :key="project.slug"
         :data-content-id="project.id"
-        class="grid gap-4 border-b border-default py-8 md:grid-cols-[1fr_2fr]"
+        class="grid items-center gap-6 border-b border-default py-6 md:grid-cols-[8rem_1fr_auto]"
       >
+        <img
+          v-if="project.image"
+          :src="project.image"
+          :alt="project.imageAlt || project.client"
+          class="aspect-square w-full rounded-lg object-cover"
+        >
+        <div
+          v-else
+          class="hidden md:block"
+        />
         <div>
           <p class="text-sm tracking-wide text-muted uppercase">
             {{ project.category }}
@@ -87,22 +97,20 @@ const { data: projects } = await useAsyncData(
           <h3 class="mt-2 font-serif text-3xl text-highlighted">
             {{ project.client }}
           </h3>
-        </div>
-        <div>
-          <p class="text-lg text-default">
+          <p class="mt-2 text-lg text-default">
             {{ project.title }}
           </p>
           <p class="mt-2 text-muted">
             {{ project.role }}
           </p>
-          <UButton
-            :to="project.path"
-            variant="link"
-            class="mt-4 px-0"
-          >
-            View project
-          </UButton>
         </div>
+        <UButton
+          :to="project.path"
+          variant="link"
+          class="px-0"
+        >
+          View project
+        </UButton>
       </article>
     </div>
   </section>

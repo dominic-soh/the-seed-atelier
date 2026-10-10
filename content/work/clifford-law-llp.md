@@ -3,6 +3,8 @@ title: Corporate Identity & Bespoke Gifting
 aesthetic: Refined, timeless, and tactile.
 category: Corporate Visual Identity & Tactical Luxury
 client: Clifford Law LLP
+image: /images/S__31653899_0.jpg
+imageAlt: ""
 order: 2
 role: Custom Gift Packaging & Visual Presentation Styling
 slug: clifford-law-llp
