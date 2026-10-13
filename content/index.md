@@ -27,8 +27,6 @@ layout: cards
 ::image-gallery
 ---
 images:
-  - src: /images/S__31653894_0.jpg
-    alt: Interior photographed for The Seed Atelier
   - src: /images/S__31653895_0.jpg
     alt: Interior photographed for The Seed Atelier
   - src: /images/S__31653896_0.jpg
@@ -42,6 +40,7 @@ images:
   - src: /images/S__31653902_0.jpg
     alt: Interior photographed for The Seed Atelier
   - src: /images/workshop2.webp
+  - src: /images/christmaswo2.webp
 ---
 ::
 
