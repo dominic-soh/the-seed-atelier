@@ -1,18 +1,18 @@
 ---
-title: Begin Your Bespoke Design Journey
-description: Share a few details below, and we'll personally connect to shape an experience tailored to your vision.
-navOrder: 4
+title: Art & Vintique Sourcing
+description: Spatial curation, botanical art, workshops, and on-site styling from The Seed Atelier.
+navOrder: 1
 navigation:
-  title: Contact
+  title: Services
+asksForGuests: false
+image: ""
+imageAlt: /images/S__31653902_0.jpg
+order: 2
+priceLabel: ""
+slug: art-vintique
+summary: Sourcing pieces with history and soul, not just items.
 ---
 
-::page-hero
----
-heading: Begin Your Bespoke Design Journey
-image: /images/S__31653896_0.jpg
-imageAlt: Interior photographed for The Seed Atelier
----
-Share a few details below, and we'll personally connect to shape an experience tailored to your vision.
-::
-
-:enquiry-section
+- **Botanicals.** Handpicked sculptural plants and custom balcony arrangements
+- **Art & Vintage.** Sourcing fine art prints, paintings, vintage furniture, and unique gallery wall pieces
+- **Textiles.** Tactile sampling of raw fabrics and luxury textures
