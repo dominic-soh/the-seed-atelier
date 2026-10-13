@@ -41,6 +41,7 @@ images:
   - src: /images/wreath.webp
   - src: /images/grouppaint.webp
   - src: /images/gpaint.webp
+  - src: /images/ikebana.webp
 ---
 ::
 
