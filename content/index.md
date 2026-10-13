@@ -39,6 +39,7 @@ images:
   - src: /images/christmaswo2.webp
   - src: /images/preserved.webp
   - src: /images/wreath.webp
+  - src: /images/grouppaint.webp
 ---
 ::
 
