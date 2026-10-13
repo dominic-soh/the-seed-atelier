@@ -33,14 +33,13 @@ images:
     alt: Interior photographed for The Seed Atelier
   - src: /images/S__31653898_0.jpg
     alt: Interior photographed for The Seed Atelier
-  - src: /images/S__31653899_0.jpg
-    alt: Interior photographed for The Seed Atelier
   - src: /images/S__31653901_0.jpg
     alt: Interior photographed for The Seed Atelier
   - src: /images/S__31653902_0.jpg
     alt: Interior photographed for The Seed Atelier
   - src: /images/workshop2.webp
   - src: /images/christmaswo2.webp
+  - src: /images/preserved.webp
 ---
 ::
 
