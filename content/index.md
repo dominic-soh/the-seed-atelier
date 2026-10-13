@@ -40,6 +40,7 @@ images:
   - src: /images/preserved.webp
   - src: /images/wreath.webp
   - src: /images/grouppaint.webp
+  - src: /images/gpaint.webp
 ---
 ::
 
