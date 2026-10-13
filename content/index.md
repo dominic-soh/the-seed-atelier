@@ -1,6 +1,8 @@
 ---
-title: Design, Curated.
+title: "Where Space Meets Art "
 description: We cultivate visual narratives with understated elegance, fusing strategic insight with artisanal detail so each project resonates long after first glance.
+navigation:
+  title: ""
 ---
 
 ::page-hero
