@@ -1,13 +1,25 @@
 ---
-title: Selected work
+title: Corporate Identity & Bespoke Gifting
 description: Selected spatial curation and botanical projects from The Seed Atelier.
 navOrder: 2
 navigation:
   title: Work
+aesthetic: Refined, timeless, and tactile.
+category: Corporate Visual Identity & Tactical Luxury
+client: Clifford Law LLP
+image: ""
+imageAlt: ""
+order: 2
+role: Custom Gift Packaging & Visual Presentation Styling
+slug: clifford-law-llp
 ---
 
-::page-hero{heading="Selected work"}
-Selected spatial curation and botanical projects from The Seed Atelier.
+::project-story
+---
+focusAreas:
+  - High-end corporate packaging
+  - Raw fabric textures
+  - Corporate identity styling
+---
+Translating corporate prestige into tactile through tailored visual identity, custom gift packaging, and understated spatial details.
 ::
-
-:work-list{layout="rows"}
