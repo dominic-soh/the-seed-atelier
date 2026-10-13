@@ -1,7 +1,10 @@
 ---
 title: On-Site Spatial Styling
 asksForGuests: false
+image: /images/Discussion.webp
+imageAlt: ""
 order: 5
+priceLabel: ""
 slug: on-site-styling
 summary: Bringing completed spaces to life through intuitive details.
 ---
